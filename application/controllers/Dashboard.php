@@ -217,7 +217,7 @@ class Dashboard extends CI_Controller
   // TU
   public function tu()
   {
-    if ($this->info->role !== 2) {
+    if ($this->info->role != 2) {
       $this->session->set_flashdata("error", "Kamu tidak memiliki akses untuk melakukan tindakan ini");
       return redirect(base_url() . "/dashboard", "refresh");
     }
@@ -229,7 +229,7 @@ class Dashboard extends CI_Controller
 
   public function tu_add()
   {
-    if ($this->info->role !== 2) {
+    if ($this->info->role != 2) {
       $this->session->set_flashdata("error", "Kamu tidak memiliki akses untuk melakukan tindakan ini");
       return redirect(base_url() . "/dashboard", "refresh");
     }
@@ -240,7 +240,7 @@ class Dashboard extends CI_Controller
 
   public function tu_edit($id)
   {
-    if ($this->info->role !== 2) {
+    if ($this->info->role != 2) {
       $this->session->set_flashdata("error", "Kamu tidak memiliki akses untuk melakukan tindakan ini");
       return redirect(base_url() . "/dashboard", "refresh");
     }
@@ -252,7 +252,7 @@ class Dashboard extends CI_Controller
 
   public function tu_edit_act($id)
   {
-    if ($this->info->role !== 2) {
+    if ($this->info->role != 2) {
       $this->session->set_flashdata("error", "Kamu tidak memiliki akses untuk melakukan tindakan ini");
       return redirect(base_url() . "/dashboard", "refresh");
     }
@@ -269,7 +269,7 @@ class Dashboard extends CI_Controller
 
   public function tu_add_act()
   {
-    if ($this->info->role !== 2) {
+    if ($this->info->role != 2) {
       $this->session->set_flashdata("error", "Kamu tidak memiliki akses untuk melakukan tindakan ini");
       return redirect(base_url() . "/dashboard", "refresh");
     }
@@ -288,7 +288,7 @@ class Dashboard extends CI_Controller
 
   public function tu_delete($id)
   {
-    if ($this->info->role !== 2) {
+    if ($this->info->role != 2) {
       $this->session->set_flashdata("error", "Kamu tidak memiliki akses untuk melakukan tindakan ini");
       return redirect(base_url() . "/dashboard", "refresh");
     }
