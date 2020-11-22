@@ -1,0 +1,173 @@
+/* 
+
+    Bootstrap color customization
+    Author: Api Rahman
+
+*/
+/* 
+:root {
+  --primary: #6379f4;
+  --secondary: #fafcff;
+  --dark: #3a3d42;
+  --white: #ffffff;
+  --danger: #ff5b37;
+} */
+
+/* Customize color bootstrap */
+
+/* Text */
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.text-dark {
+  color: var(--dark) !important;
+}
+
+.text-white {
+  color: var(--white) !important;
+}
+
+.text-danger {
+  color: var(--danger) !important;
+}
+
+/* Background */
+
+.bg-primary {
+  background: var(--primary) !important;
+}
+
+.bg-secondary {
+  background: var(--secondary) !important;
+}
+
+.bg-dark {
+  background: var(--dark) !important;
+}
+
+.bg-white {
+  background: var(--white) !important;
+}
+
+.bg-danger {
+  background: var(--danger) !important;
+}
+
+/* Button background */
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background: var(--primary) !important;
+  border: var(--primary) !important;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
+  background: var(--secondary) !important;
+}
+
+.btn-dark,
+.btn-dark:hover,
+.btn-dark:active,
+.btn-dark:focus {
+  background: var(--dark) !important;
+}
+
+.btn-light,
+.btn-light:hover,
+.btn-light:active,
+.btn-light:focus {
+  background: var(--white) !important;
+}
+
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus {
+  background: var(--danger) !important;
+}
+
+/* Button Outline */
+
+.btn-outline-primary {
+  outline-color: var(--primary);
+}
+
+.btn-outline-secondary {
+  outline-color: var(--secondary);
+}
+
+.btn-outline-dark {
+  outline-color: var(--dark);
+}
+
+.btn-outline-light {
+  outline-color: var(--white);
+}
+
+.btn-outline-danger {
+  outline-color: var(--danger);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background: var(--primary) !important;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active {
+  background: var(--secondary) !important;
+}
+
+.btn-outline-dark:hover,
+.btn-outline-dark:focus,
+.btn-outline-dark:active {
+  background: var(--dark) !important;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus,
+.btn-outline-light:active {
+  background: unset !important;
+  color: white !important;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:focus,
+.btn-outline-danger:active {
+  background: var(--danger) !important;
+}
+
+.sticky-top-15 {
+  position: sticky;
+  top: 15px;
+}
+
+/* vh */
+
+.vh-90 {
+  min-height: 90vh;
+  height: 100%;
+}
+
+.vh-85 {
+  min-height: 85vh;
+  height: 100%;
+}
+
+/* Rounded */
+
+.rounded-14 {
+  border-radius: 14px !important;
+}
