@@ -76,7 +76,7 @@
           <img src="/static/images/icons/mail.svg" />
           <input type="email" value="<?= $list->username ?>" name="username" required placeholder="johndoe89@gmail.com" class="ml-2" />
         </label>
-        <button class="btn btn-primary w-100 mt-4 py-2">Edit Guru</button>
+        <button class="btn btn-primary w-100 mt-4 py-2">Edit TU</button>
       </form>
     </div>
   </section>

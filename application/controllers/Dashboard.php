@@ -517,7 +517,7 @@ class Dashboard extends CI_Controller
       $getTotal = $this->users
         ->setWhere(["b.nama" => 10, "d.nama" => $value->nama, "e.nama" => $detailUser->jurusan])
         ->getOne("COUNT(a.id) as total");
-      if ($getTotal >= 36) continue;
+      if ($getTotal->total >= 36) continue;
 
       $dataUpdate = ["status" => "lolos", "id_grade" => $value->id, "id_kelas" => $kelas->id];
       $this->users
