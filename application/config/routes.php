@@ -68,6 +68,7 @@ $route['dashboard/siswa'] = 'dashboard/siswa';
 $route['dashboard/siswa/detail'] = 'dashboard/detail';
 $route['dashboard/siswa/pending'] = 'dashboard/siswa_pending';
 $route['dashboard/siswa/semua'] = 'dashboard/siswa_all';
+$route['dashboard/siswa/delete/(:any)'] = 'dashboard/siswa_delete/$1';
 $route['dashboard/siswa/edit/(:any)'] = 'dashboard/siswa_edit/$1';
 $route['dashboard/siswa/act_edit/(:any)'] = 'dashboard/siswa_edit_act/$1';
 

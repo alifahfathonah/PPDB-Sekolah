@@ -443,6 +443,17 @@ class Dashboard extends CI_Controller
     $this->load->view('dashboard/admin/siswa_edit', $data);
   }
 
+  public function siswa_delete($id)
+  {
+    if (!$id) {
+      return redirect(base_url() . "/dashboard/siswa", "refresh");
+    }
+
+    $this->users->setWhere(['id' => $id])->delete();
+    $this->session->set_flashdata("success", "Sukses hapus data siswa");
+    return redirect(base_url() . "/dashboard/siswa", "refresh");
+  }
+
   public function siswa_edit_act($id)
   {
     if ($_SERVER['REQUEST_METHOD'] !== "POST") {

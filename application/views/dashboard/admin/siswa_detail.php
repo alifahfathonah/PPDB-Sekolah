@@ -94,6 +94,7 @@
 
                 <td>
                   <a href="<?= base_url() ?>/dashboard/siswa/edit/<?= $value->id ?>" class="btn btn-warning py-1 btn-sm">Edit</a>
+                  <a href="<?= base_url() ?>/dashboard/siswa/delete/<?= $value->id ?>" class="btn btn-danger py-1 btn-sm">Hapus</a>
                 </td>
               </tr>
 
