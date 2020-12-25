@@ -21,7 +21,7 @@
     <div class="text-center">
 
       <h5 class="mt-3 mb-0"><?= $userdata->nama ?></h5>
-      <div class="small"><?= $userdata->email ?></div>
+
     </div>
     <hr />
     <ul>
@@ -65,6 +65,12 @@
       </div>
 
       <form method="POST" action="<?= base_url() ?>/dashboard/siswa/act_edit/<?= $siswa->id ?>" class="row flex-column col-md-5">
+        <label class="input-container-bottom py-2 my-2">
+          <div class="small">NIS</div>
+          <img src="/static/images/icons/user.svg" />
+          <input type="text" value="<?= $siswa->nis ?>" name="nis" required placeholder="NIS" class="ml-2" />
+        </label>
+
         <label class="input-container-bottom py-2 my-2">
           <div class="small">Nama</div>
           <img src="/static/images/icons/user.svg" />

@@ -21,7 +21,7 @@
     <div class="text-center">
 
       <h5 class="mt-3 mb-0"><?= $userdata->nama ?></h5>
-      <div class="small"><?= $userdata->email ?></div>
+
     </div>
     <hr />
     <ul>
@@ -72,7 +72,6 @@
               <th>No</th>
               <th>Nama</th>
               <th>Username</th>
-              <th>Daftar Pada</th>
               <th>Aksi</th>
             </tr>
           </thead>
@@ -82,7 +81,6 @@
                 <td><?= $key + 1 ?></td>
                 <td><?= $value->nama ?></td>
                 <td><?= $value->username ?></td>
-                <td><?= $value->tanggal_daftar ?></td>
                 <td>
                   <a href="<?= base_url() ?>/dashboard/tu/hapus/<?= $value->id ?>" class="btn btn-danger py-0 btn-sm">Hapus</a>
                   <a href="<?= base_url() ?>/dashboard/tu/edit/<?= $value->id ?>" class="btn btn-primary py-0 btn-sm">Edit</a>

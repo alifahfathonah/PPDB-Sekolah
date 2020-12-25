@@ -21,7 +21,7 @@
     <div class="text-center">
 
       <h5 class="mt-3 mb-0"><?= $userdata->nama ?></h5>
-      <div class="small"><?= $userdata->email ?></div>
+
     </div>
     <hr />
     <ul>

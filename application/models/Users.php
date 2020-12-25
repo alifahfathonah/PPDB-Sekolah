@@ -5,7 +5,7 @@ class Users extends CI_Model
 
   protected $data;
   protected $where;
-  protected $show = "a.id, a.role, a.nama, a.email, a.username, a.status, a.tanggal_daftar, b.nama AS kelas, c.total AS nilai_total, c.matematika, c.indonesia, c.ipa, c.inggris, d.nama AS grade, e.nama AS jurusan";
+  protected $show = "a.id, a.nis, a.role, a.nama, a.email, a.username, a.status, a.tanggal_daftar, b.nama AS kelas, c.total AS nilai_total, c.matematika, c.indonesia, c.ipa, c.inggris, d.nama AS grade, e.nama AS jurusan";
 
   protected $table = "users AS a";
   protected $kelas = ["kelas AS b", "b.id = a.id_kelas"];

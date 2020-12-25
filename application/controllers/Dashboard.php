@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller
     parent::__construct();
     $this->sesi = $this->session->userdata('user');
     if (!$this->sesi) return redirect(base_url() . "auth/masuk", 'refresh');
-    $this->info = (object) $this->users->setWhere(["a.id" => $this->sesi->id])->getOne();
+    $this->info = (object) $this->admin->setWhere(["id" => $this->sesi->id])->getOne();
     if ($this->sesi->role == 0) return redirect(base_url() . "siswa/index", 'refresh');
   }
 
@@ -222,7 +222,7 @@ class Dashboard extends CI_Controller
       return redirect(base_url() . "/dashboard", "refresh");
     }
     $data['userdata'] = $this->info;
-    $data['user'] = $this->users->setWhere(["a.role" => 1])->get();
+    $data['user'] = $this->admin->setWhere(["role" => 1])->get();
 
     $this->load->view('dashboard/admin/tu', $data);
   }
@@ -245,7 +245,7 @@ class Dashboard extends CI_Controller
       return redirect(base_url() . "/dashboard", "refresh");
     }
     $data['userdata'] = $this->info;
-    $data['list'] = (object) $this->users->setWhere(['a.id' => $id])->getOne();
+    $data['list'] = (object) $this->admin->setWhere(['id' => $id])->getOne();
 
     $this->load->view('dashboard/admin/tu_edit', $data);
   }
@@ -261,7 +261,7 @@ class Dashboard extends CI_Controller
       return redirect(base_url() . "/dashboard/tu", "refresh");
     }
     $input = (object) $this->input->post();
-    $this->users->setData($input)->setWhere(['id' => $id])->update();
+    $this->admin->setData($input)->setWhere(['id' => $id])->update();
 
     $this->session->set_flashdata("success", "Sukses edit data tu");
     return redirect(base_url() . "/dashboard/tu", "refresh");
@@ -280,7 +280,7 @@ class Dashboard extends CI_Controller
     $input = $this->input->post();
     $input['role'] = 1;
     $input['password'] = md5($input['password']);
-    $this->users->setData($input)->insert();
+    $this->admin->setData($input)->insert();
 
     $this->session->set_flashdata("success", "Sukses tambah data tu");
     return redirect(base_url() . "/dashboard/tu", "refresh");
@@ -296,7 +296,7 @@ class Dashboard extends CI_Controller
       return redirect(base_url() . "/dashboard/tu", "refresh");
     }
 
-    $this->users->setWhere(['id' => $id])->delete();
+    $this->admin->setWhere(['id' => $id])->delete();
     $this->session->set_flashdata("success", "Sukses hapus data tu");
     return redirect(base_url() . "/dashboard/tu", "refresh");
   }

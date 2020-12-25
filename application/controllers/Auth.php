@@ -43,8 +43,21 @@ class Auth extends CI_Controller
 		$input = (object) $this->input->post();
 		$checkUser = $this->users->check(["username" => $input->username]);
 		if (!$checkUser) {
-			$this->session->set_flashdata("error", "Nama Pengguna atau Kata Sandi salah");
-			return redirect(base_url() . "auth/masuk", "refresh");
+			$checkAdmin = $this->admin->check(["username" => $input->username]);
+			if (!$checkAdmin) {
+				$this->session->set_flashdata("error", "Nama Pengguna atau Kata Sandi salah");
+				return redirect(base_url() . "auth/masuk", "refresh");
+			}
+
+			if ($checkAdmin->password !== md5($input->password)) {
+				$this->session->set_flashdata("error", "Nama Pengguna atau Kata Sandi salah");
+				return redirect(base_url() . "auth/masuk", "refresh");
+			}
+
+			unset($checkAdmin->password);
+			$this->session->set_userdata(["user" => $checkAdmin]);
+
+			return redirect(base_url() . "dashboard", "refresh");
 		}
 
 		if ($checkUser->password !== md5($input->password)) {
@@ -55,8 +68,7 @@ class Auth extends CI_Controller
 		unset($checkUser->password);
 		$this->session->set_userdata(["user" => $checkUser]);
 
-		if ($checkUser->role == 0) redirect(base_url() . "siswa", "refresh");
-		else redirect(base_url() . "dashboard", "refresh");
+		return redirect(base_url() . "siswa", "refresh");
 	}
 
 	public function loginView()
